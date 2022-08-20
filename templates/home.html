@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>NewsHub</title>
+    <link rel="stylesheet" href="../static/css/grid.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/home.css">
+    <link rel="icon" href="../static/images/logo.png" type="image/jpg">
+  </head>
+  <body>   
+    <div class="row">
+        <div class="box">
+	             <div>
+		            <img alt="logo" class="logo" src="../static/images/logo.png">
+		            <h1>NewsHub</h1>
+	            </div>
+        </div>
+    </div>
+    <div class="row">
+	    <div class="back">
+		    <div class="top">
+		      <h2>TOP NEWS</h2>  
+		    </div>
+		    <div class="news">
+		      {% for news,desc,img, url in articles_list %}
+		        <div class="row">
+		        <div class="col span-1-of-3">
+		        <img src="{{img}}" alt=""class="image">
+		        </div>
+		        <div class="col span-2-of-3">
+		        <h3>News:</h3><p>{{news}}</p>
+		        <h4>Description:</h4><p>{{desc}}</p>
+		        <br>
+		        <a href="{{url}}" class="btn-full" target="_blank">Read More</a>
+		        </div>
+		        </div>
+		       {% endfor %}
+		    </div>
+	    </div>
+	</div>
+    </div>
+  </body>
+</html>
